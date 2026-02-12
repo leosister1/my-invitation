@@ -399,6 +399,14 @@
     .btn-share:hover  { transform:translateY(-2px); }
     .btn-share:active { transform:scale(.96); }
 
+    .btn-kakao {
+      background: #FEE500 !important;
+      color: #3A1D1D !important;
+      font-weight: 700;
+      margin-top: clamp(20px,5vw,28px);
+    }
+    .btn-kakao:hover { background: #f5da00 !important; }
+
     /* ── 토스트 ── */
     .toast {
       position:fixed; bottom: clamp(20px,5vw,36px); left:50%;
@@ -443,6 +451,8 @@
       }
     }
   </style>
+
+  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js" integrity="sha384-TiCUE00h649CAMonG018J2ujOgDKW/kVWlChEuu4jK2vxfAAD0eZxzCKakxg55G4" crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="page-shell">
@@ -505,7 +515,8 @@
         달콤하게 먹으면서<br>나 생각해줘 🥺
       </p>
       <p class="result-from">— 너를 좋아하는 사람이 💌</p>
-      <button class="btn-share" onclick="copyLink()">🔗 이 페이지 공유하기</button>
+      <button class="btn-share btn-kakao" onclick="shareKakao()">💛 카카오톡으로 공유하기</button>
+      <button class="btn-share" style="margin-top:10px;" onclick="copyLink()">🔗 링크 복사하기</button>
     </div>
   </section>
 
@@ -513,6 +524,30 @@
 <div class="toast" id="toast"></div>
 
 <script>
+  Kakao.init('7d84242f9b192ff2e1d328a4b22d503c');
+
+  function shareKakao(){
+    Kakao.Share.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '💌 잠깐, 퀴즈 하나만 풀어봐',
+        description: '5문제만 맞히면 특별한 선물이 기다리고 있어 🍫',
+        imageUrl: 'https://images.unsplash.com/photo-1511381939415-e44f492d3b08?w=800&q=80',
+        link: {
+          mobileWebUrl: location.href,
+          webUrl: location.href,
+        },
+      },
+      buttons: [{
+        title: '퀴즈 풀러가기 🍫',
+        link: {
+          mobileWebUrl: location.href,
+          webUrl: location.href,
+        },
+      }],
+    });
+  }
+
   /* ── 파티클 ── */
   const emojis=['🍫','💕','✨','🌹','🍬','💝'];
   const pWrap=document.getElementById('particles');
