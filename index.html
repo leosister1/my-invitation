@@ -139,7 +139,7 @@
     .scroll-arrow {
       width:22px; height:22px;
       border-right:2.5px solid var(--pink);
-      border-bottom:2.5px solid var(--pink);
+      border-top:2.5px solid var(--pink);
       transform:rotate(45deg);
       animation:bounce 1.2s ease-in-out infinite;
     }
@@ -488,6 +488,8 @@
         귀엽지요 ~~? 🍫
       </p>
       <p class="result-from">— 유딘 💌</p>
+      <button onclick="shareKakao()" style="margin-top:24px;width:100%;padding:16px;background:#FEE500;color:#3A1D1D;border:none;border-radius:50px;font-family:'Gaegu',cursive;font-size:1rem;font-weight:700;cursor:pointer;min-height:52px;display:flex;align-items:center;justify-content:center;gap:8px;">💛 카카오톡으로 공유하기</button>
+    </div>
     </div>
   </section>
 
@@ -496,6 +498,28 @@
 
 <script>
   Kakao.init('7d84242f9b192ff2e1d328a4b22d503c');
+
+  function shareKakao(){
+    Kakao.Share.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '퀴즈 하나 풀어볼 사람 ~~? 🤭',
+        description: '5문제 맞히면 특별한 선물이 기다리고 있지롱',
+        imageUrl: 'https://my-invitation-eight.vercel.app/thumbnail.png',
+        link: {
+          mobileWebUrl: 'https://my-invitation-eight.vercel.app',
+          webUrl: 'https://my-invitation-eight.vercel.app',
+        },
+      },
+      buttons: [{
+        title: '퀴즈 풀러가기 🍫',
+        link: {
+          mobileWebUrl: 'https://my-invitation-eight.vercel.app',
+          webUrl: 'https://my-invitation-eight.vercel.app',
+        },
+      }],
+    });
+  }
 
   /* ── 파티클 ── */
   const emojis=['🍫','💕','✨','🌹','🍬','💝'];
