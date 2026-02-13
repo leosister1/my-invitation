@@ -492,12 +492,12 @@
       </div>
       <div class="box-body">
         <div class="choco-grid">
-          <div class="choco-piece cp1" data-msg="항상 네 생각해 🤎" onclick="flipChoco(this)">🍫</div>
-          <div class="choco-piece cp2" data-msg="같이 있으면 행복해 🧡" onclick="flipChoco(this)">🍬</div>
-          <div class="choco-piece cp3" data-msg="오늘 나랑 데이트할래? 💕" onclick="flipChoco(this)">🍫</div>
-          <div class="choco-piece cp4" data-msg="네가 제일 좋아 💛" onclick="flipChoco(this)">🍭</div>
-          <div class="choco-piece cp5" data-msg="사랑해 💝" onclick="flipChoco(this)">💝</div>
-          <div class="choco-piece cp6" data-msg="발렌타인데이 축하해 🍫" onclick="flipChoco(this)">🍫</div>
+          <div class="choco-piece cp1" data-msg="🤎" onclick="flipChoco(this)">🍫</div>
+          <div class="choco-piece cp2" data-msg="🧡" onclick="flipChoco(this)">🍬</div>
+          <div class="choco-piece cp3" data-msg="💕" onclick="flipChoco(this)">🍫</div>
+          <div class="choco-piece cp4" data-msg="💛" onclick="flipChoco(this)">🍭</div>
+          <div class="choco-piece cp5" data-msg="💝" onclick="flipChoco(this)">💝</div>
+          <div class="choco-piece cp6" data-msg="🍫" onclick="flipChoco(this)">🍫</div>
         </div>
         <p class="box-note">💬 다 눌러봐!</p>
       </div>
@@ -509,13 +509,13 @@
   <section id="result-section">
     <div class="result-card">
       <span class="result-emoji">🎁</span>
-      <h2 class="result-title">너한테 주고 싶었어 💕</h2>
+      <h2 class="result-title">짜자잔 ~~ 💕</h2>
       <p class="result-msg">
-        오늘 발렌타인데이에<br>
-        직접 만든 초콜릿이야 🍫<br><br>
-        달콤하게 먹으면서<br>나 생각해줘 🥺
+        오늘 발렌타인데이에 주려고<br>
+        내가 만든 강쥐양 🐕 🐕 🐕<br><br>
+        귀엽지요 ~~? 🍫
       </p>
-      <p class="result-from">— 너를 좋아하는 사람이 💌</p>
+      <p class="result-from">— 유딘 💌</p>
       <button onclick="shareKakao()" style="margin-top:20px;width:100%;padding:16px;background:#FEE500;color:#3A1D1D;border:none;border-radius:50px;font-family:'Gaegu',cursive;font-size:1rem;font-weight:700;cursor:pointer;min-height:52px;">💛 카카오톡으로 공유하기</button>
       <button onclick="copyLink()" style="margin-top:10px;width:100%;padding:16px;background:#3d1a0e;color:#ffb8a0;border:none;border-radius:50px;font-family:'Gaegu',cursive;font-size:1rem;cursor:pointer;min-height:52px;">🔗 링크 복사하기</button>
     </div>
@@ -563,39 +563,39 @@
   /* ══ 퀴즈 데이터 ══ */
   const questions=[
     {
-      emoji:'🍫',
-      q:'발렌타인데이에 초콜릿을\n받으면 기분이 어때?',
-      answers:['완전 좋지 💕','별로야 😑'],
-      correct:0,
-      reaction:'맞아! 당연히 좋지 🍫'
-    },
-    {
-      emoji:'🥺',
-      q:'누군가 너를 좋아한다면\n어떻게 할 거야?',
-      answers:['설레서 생각해볼게 🌹','그냥 무시할 거야 🙄'],
-      correct:0,
-      reaction:'역시 그렇지! 설레잖아 💕'
-    },
-    {
-      emoji:'🌹',
-      q:'오늘 같이 데이트하면\n뭐가 하고 싶어?',
-      answers:['맛있는 거 먹고 싶어 🍽️','집에만 있고 싶어 🏠'],
-      correct:0,
-      reaction:'좋아, 나도 같이 먹고 싶어 😋'
-    },
-    {
       emoji:'💝',
-      q:'초콜릿 vs 사탕,\n더 달콤한 건?',
-      answers:['초콜릿이지 🍫','사탕이 더 달아 🍬'],
+      q:'초콜릿 vs 사탕,\n뭐가 더 좋아 ?',
+      answers:['초콜릿이지 🍫','사탕이 더 좋아 🍬'],
       correct:0,
       reaction:'동의! 초콜릿이 최고야 🍫'
     },
     {
-      emoji:'💌',
-      q:'마지막 질문!\n오늘 나랑 같이 있어줄 수 있어?',
-      answers:['응, 좋아! 💕','음... 좀 바빠 😅'],
+      emoji:'🍫',
+      q:'발렌타인데이에 초콜릿을\n받으면 기분이 어때 ?',
+      answers:['완전 좋지 💕','으음 ~ 별로야 😑'],
       correct:0,
-      reaction:'고마워 💕 진짜 기대된다!'
+      reaction:'아무래도 ~~ 🍫'
+    },
+    {
+      emoji:'🥺',
+      q:'그럼 강아지가 좋아 ?\n고양이가 좋아 ?',
+      answers:['강아지가 더 좋아 🐶','고먐미가 더 좋아 🐈'],
+      correct:0,
+      reaction:'역시 강아지 강이구나 ~~ 🐾'
+    },
+    {
+      emoji:'🌹',
+      q:'그럼 어떤 강아지가 좋아 ?\n다리가 짧은 애가 귀엽지 않아 ? 🤓',
+      answers:['치와와가 좋아 🙅‍♀️','닥스훈트가 좋지 🙆‍♀️'],
+      correct:0,
+      reaction:'좋아, 나도 같이 먹고 싶어 😋'
+    },
+    {
+      emoji:'💌',
+      q:'마지막 질문!\n오늘이 무슨 날이게 ~~',
+      answers:['🍫','🍭'],
+      correct:0,
+      reaction:'해피 발렌타인데이 💕'
     }
   ];
 
