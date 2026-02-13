@@ -380,28 +380,6 @@
       font-size:var(--fs-xs); color:var(--caramel);
       font-family:'Gaegu',cursive;
     }
-    .btn-share {
-      margin-top: clamp(20px,5vw,28px);
-      width:100%; padding: clamp(14px,3.5vw,17px);
-      background:var(--choco); color:var(--peach);
-      border:none; border-radius:50px;
-      font-family:'Gaegu',cursive;
-      font-size: var(--fs-sm);
-      cursor:pointer; touch-action:manipulation;
-      transition:transform .2s;
-      min-height:52px;
-      display:flex; align-items:center; justify-content:center; gap:8px;
-    }
-    .btn-share:hover  { transform:translateY(-2px); }
-    .btn-share:active { transform:scale(.96); }
-
-    .btn-kakao {
-      background: #FEE500 !important;
-      color: #3A1D1D !important;
-      font-weight: 700;
-      margin-top: clamp(20px,5vw,28px);
-    }
-    .btn-kakao:hover { background: #f5da00 !important; }
 
     /* ── 토스트 ── */
     .toast {
@@ -510,8 +488,6 @@
         귀엽지요 ~~? 🍫
       </p>
       <p class="result-from">— 유딘 💌</p>
-      <button onclick="shareKakao()" style="margin-top:20px;width:100%;padding:16px;background:#FEE500;color:#3A1D1D;border:none;border-radius:50px;font-family:'Gaegu',cursive;font-size:1rem;font-weight:700;cursor:pointer;min-height:52px;">💛 카카오톡으로 공유하기</button>
-      <button onclick="copyLink()" style="margin-top:10px;width:100%;padding:16px;background:#3d1a0e;color:#ffb8a0;border:none;border-radius:50px;font-family:'Gaegu',cursive;font-size:1rem;cursor:pointer;min-height:52px;">🔗 링크 복사하기</button>
     </div>
   </section>
 
@@ -520,28 +496,6 @@
 
 <script>
   Kakao.init('7d84242f9b192ff2e1d328a4b22d503c');
-
-  function shareKakao(){
-    Kakao.Share.sendDefault({
-      objectType: 'feed',
-      content: {
-        title: '💌 잠깐, 퀴즈 하나만 풀어봐',
-        description: '5문제만 맞히면 특별한 선물이 기다리고 있어 🍫',
-        imageUrl: 'https://my-invitation-eight.vercel.app/thumbnail.png',
-        link: {
-          mobileWebUrl: location.href,
-          webUrl: location.href,
-        },
-      },
-      buttons: [{
-        title: '퀴즈 풀러가기 🍫',
-        link: {
-          mobileWebUrl: location.href,
-          webUrl: location.href,
-        },
-      }],
-    });
-  }
 
   /* ── 파티클 ── */
   const emojis=['🍫','💕','✨','🌹','🍬','💝'];
@@ -683,19 +637,6 @@
     document.getElementById('result-section').classList.add('active');
     window.scrollTo(0,0);
     for(let i=0;i<30;i++) setTimeout(spawnRandom,i*60);
-  }
-
-  function copyLink(){
-    const url=location.href;
-    if(navigator.clipboard){
-      navigator.clipboard.writeText(url).then(()=>showToast('🔗 링크 복사 완료!'));
-    } else {
-      const el=document.createElement('textarea');
-      el.value=url; el.style.cssText='position:fixed;opacity:0';
-      document.body.appendChild(el); el.select();
-      document.execCommand('copy'); document.body.removeChild(el);
-      showToast('🔗 링크 복사 완료!');
-    }
   }
 
   function showToast(msg){
