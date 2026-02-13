@@ -633,9 +633,8 @@
   }
 
   function handleAnswer(btn,isCorrect){
-    document.querySelectorAll('.q-btn').forEach(b=>b.onclick=null);
-
     if(isCorrect){
+      document.querySelectorAll('.q-btn').forEach(b=>b.onclick=null);
       const reaction=document.getElementById('reaction');
       reaction.textContent=questions[current].reaction;
       reaction.style.opacity='1';
