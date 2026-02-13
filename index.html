@@ -269,7 +269,7 @@
       border-radius:16px 16px 4px 4px;
       padding: clamp(18px,4vw,24px) 20px clamp(22px,5vw,28px);
       transform-origin:top center; transform-style:preserve-3d;
-      transition:transform 1s cubic-bezier(.22,1,.36,1);
+      transition:transform 3s cubic-bezier(.22,1,.36,1);
       box-shadow:0 8px 32px rgba(232,54,93,.3);
     }
     .box-lid.open { transform:rotateX(-148deg); }
@@ -333,11 +333,6 @@
     .cp4{background:linear-gradient(135deg,#9a4a18,#6b2f08);}
     .cp5{background:linear-gradient(135deg,#e8365d,#b01840);}
     .cp6{background:linear-gradient(135deg,#5a2510,#3a1208);}
-    .box-note {
-      text-align:center; font-size:var(--fs-xs);
-      color:var(--caramel); margin-top: clamp(10px,2.5vw,14px);
-      font-family:'Gaegu',cursive;
-    }
 
     .next-btn {
       margin-top: clamp(24px,5vw,32px);
@@ -499,7 +494,6 @@
           <div class="choco-piece cp5" data-msg="💝" onclick="flipChoco(this)">💝</div>
           <div class="choco-piece cp6" data-msg="🍫" onclick="flipChoco(this)">🍫</div>
         </div>
-        <p class="box-note">💬 다 눌러봐!</p>
       </div>
     </div>
     <button class="next-btn" onclick="showResult()">다음으로 💌</button>
